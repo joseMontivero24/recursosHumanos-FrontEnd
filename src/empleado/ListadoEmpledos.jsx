@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../main.css';
 import axios from 'axios';
 import { NumericFormat } from 'react-number-format';
+import { Link } from 'react-router-dom';
 
 export const ListadoEmpledos = () => {
 
@@ -54,6 +55,9 @@ export const ListadoEmpledos = () => {
                                     thousandSeparator=',' prefix={'$'}
                                     decimalScale={2} fixedDecimalScale
                                 />
+                                </td>
+                                <td className="text-center">
+                                    <Link to={`/editar/${empleado.idEmpleado}`} className='btn btn-warning btn-sm me-3'>Editar</Link>
                                 </td>
                             </tr>
                         ))
