@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export const AgregarEmpleado = () => {
@@ -30,46 +30,55 @@ export const AgregarEmpleado = () => {
     };
 
     return (
-        <div className="container">
-            <div className="content-agr-empleado container">
-                <h3 className="text-center">Agregar Empleado</h3>
+        <div className="row justify-content-center">
+            <div className="cold-md-8">
+                <div className="card shadow border-0">
+                    <div className="card-body">
 
-                <form onSubmit={(e) => onSubmit(e)}>
-                    <div className="mb-3">
-                        <label htmlFor="nombre" className="form-label">Nombre</label>
-                        <input value={nombre}
-                            onChange={(e) => onInputChange(e)}
-                            type="text"
-                            className="form-control"
-                            id="nombre" name="nombre" required={true} />
+                        <h3 className="text-center mb-4">Agregar Empleado</h3>
+                        <p className="text-muted text-center">
+                            Complete la información del empleado.
+                        </p>
+
+                        <form onSubmit={(e) => onSubmit(e)}>
+                            <div className="mb-3">
+                                <label htmlFor="nombre" className="form-label">Nombre</label>
+                                <input value={nombre}
+                                    onChange={(e) => onInputChange(e)}
+                                    type="text"
+                                    className="form-control"
+                                    id="nombre" name="nombre" required={true} />
+                            </div>
+
+                            <div className="mb-3">
+                                <label htmlFor="departamento" className="form-label">Departamento</label>
+                                <input
+                                    value={departamento}
+                                    onChange={(e) => onInputChange(e)}
+                                    type="text"
+                                    className="form-control" id="departamento" name="departamento" />
+                            </div>
+
+                            <div className="mb-3">
+                                <label htmlFor="sueldo" className="form-label">Sueldo</label>
+                                <input value={sueldo}
+                                    onChange={(e) => onInputChange(e)}
+                                    type="number"
+                                    step="any"
+                                    className="form-control" id="sueldo" name="sueldo" />
+                            </div>
+
+                            <div className="text-center">
+                                <button type="submit" className="btn btn-success">Guardar</button>
+                                <Link to="/" className="btn btn-secondary ms-2">Volver</Link>
+
+                            </div>
+
+                        </form>
                     </div>
-
-                    <div className="mb-3">
-                        <label htmlFor="departamento" className="form-label">Departamento</label>
-                        <input
-                            value={departamento}
-                            onChange={(e) => onInputChange(e)}
-                            type="text"
-                            className="form-control" id="departamento" name="departamento" />
-                    </div>
-
-                    <div className="mb-3">
-                        <label htmlFor="sueldo" className="form-label">Sueldo</label>
-                        <input value={sueldo}
-                            onChange={(e) => onInputChange(e)}
-                            type="number"
-                            step="any"
-                            className="form-control" id="sueldo" name="sueldo" />
-                    </div>
-
-                    <div className="text-center">
-                        <button type="submit" className="btn btn-warning btn-sm p-2 me-3">Agregar</button>
-                        <a href="/" className="btn btn-danger p-2 btn-sm">Regregar</a>
-
-                    </div>
-
-                </form>
+                </div>
             </div>
+
         </div>
     )
 }

@@ -1,3 +1,7 @@
+body {
+    background-color: #f5f7fa;
+}
+
 .contenedor-section, .content-agr-empleado{
     margin: 30px;
 }

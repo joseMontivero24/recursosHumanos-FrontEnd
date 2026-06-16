@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 
 export const EditarEmpleados = () => {
@@ -37,7 +37,7 @@ export const EditarEmpleados = () => {
     // comunicarnos con el back
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post(urlBase, empleado);
+        await axios.put(`${urlBase}/${id}`, empleado);
         // Para redirigirnos a la pagina  de inicio
         navegacion('/');
 
@@ -45,7 +45,7 @@ export const EditarEmpleados = () => {
 
     return (
         <div className="container">
-            <div className="content-agr-empleado container">
+            <div className="content-agr-empleado  container">
                 <h3 className="text-center">Editar Empleado</h3>
 
                 <form onSubmit={(e) => onSubmit(e)}>
@@ -78,7 +78,7 @@ export const EditarEmpleados = () => {
 
                     <div className="text-center">
                         <button type="submit" className="btn btn-warning btn-sm p-2 me-3">Guardar</button>
-                        <a href="/" className="btn btn-danger p-2 btn-sm">Regregar</a>
+                        <Link to="/" className="btn btn-danger p-2 btn-sm">Regregar</Link>
 
                     </div>
 

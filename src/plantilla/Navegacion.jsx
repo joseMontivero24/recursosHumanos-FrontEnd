@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 export const Navegacion = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark text-bg-success">
+            <nav className="navbar navbar-expand-lg navbar-dark text-bg-primary shadow-sm">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/">
-                        SRH
-                    </a>
+                    <Link className="navbar-brand fw-bold" to="/">
+                        Sistema de Recursos Humanos
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -21,9 +21,9 @@ export const Navegacion = () => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">
+                                <Link className="nav-link active" to="/">
                                     Inicio
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/agregar">
